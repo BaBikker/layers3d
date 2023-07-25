@@ -1,0 +1,67 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color:rgb(255, 255, 255);
+}
+
+h1 {
+    font-weight: bold;
+}
+
+.welkomtekst {
+text-align: center;
+}
+
+.navbar-custom {
+    background-color: #395B64;
+}
+
+.nav-text-color{
+    color: #E7F6F2;
+}
+
+#formulier {
+    width: 75%;
+}
+
+.break {
+    border-top: 4px dotted #395B64;
+    opacity: 50%;
+}
+
+.container-p3d {
+    text-align: center;
+    margin: auto;
+    width: 60%;
+}
+
+.wrapper{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+}
+
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+.btn {
+    background-color: #395B64;
+    color: white;
+}
+
+.btn:hover {
+    background-color: #A5C9CA;
+    color: black;
+}
+
+.contact-wrapper {
+    align-items: center;
+    width: 80%;
+}
+
+

@@ -1,0 +1,105 @@
+    <!DOCTYPE html>
+
+    <html>
+        <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <title></title>
+            <meta name="description" content="">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="styles.css">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+            <link rel="stylesheet" href="styles.css">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        </head>
+        <body> 
+            <script src="" async defer></script>
+            <nav class="navbar navbar-expand-lg sticky-top navbar-custom">
+              <div class="container-fluid">
+                <a class="navbar-brand nav-text-color " href="/">Layers3D</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <div class="navbar-nav">
+                    <a class="nav-link nav-text-color " href="3dprintservice">3D-Printservice</a>
+                    <a class="nav-link nav-text-color " href="offerte">Offerte</a>
+                    <a class="nav-link nav-text-color " href="prijzen">Prijzen</a>
+                    <a class="nav-link nav-text-color " href="contact">Contact</a>
+                  </div>
+                </div>
+              </div>
+            </nav>
+      </nav>
+    <div class="welkomtekst">
+      <h1 id="welcome-heading">Offerte aanvragen</h1>
+      <p id="welcome-text">Vraag hier een geheel vrijblijvende een offerte aan of neem contact met ons op voor meer informatie.</p>
+      <p>Houd rekening met een minimale ordergrootte van €29,95 exclusief BTW.</p>
+    </div>
+    <div class="container" id="formulier">
+      <form class="row g-3" action="/" method="post">
+        <div class="col-md-6">
+          <label for="fname" id="inputfname">Voornaam:</label>
+          <input type="text" class="form-control" id="fname" name="fname" required>
+        </div>
+        <div class="col-md-6">
+          <label for="lname" id="inputlname">Achternaam:</label>
+          <input type="text" class="form-control" id="lname" name="lname" required>
+        </div>
+        <div class="col-md-6">
+          <label for="email" class="form-label" id="inputemail">Email:</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="col-md-6">
+          <label for="streetname" class="form-label" id="inputstreetname">Straatnaam + huisnummer:</label>
+          <input type="text" class="form-control" id="streetname" name="streetname" required>
+        </div>
+        <div class="col-md-2">
+          <label for="zipcode" class="form-label" id="inputzipcode">Postcode</label>
+          <input type="text" class="form-control" id="zipcode" name="zipcode" required>
+        </div>
+        <div class="col-md-6">
+          <label for="city" id="inputcityname" class="form-label">Plaatsnaam:</label>
+          <input type="text" class="form-control" id="city" name="city" required>
+        </div>
+        <div class="break"></div>
+        <div class="form-check form-check-inline">
+            <p>Gewenste printtechniek</p>
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+            <label class="form-check-label" for="inlineRadio1">FDM (standaard)</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">SLA (HD voor kleine objecten)</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+            <label class="form-check-label" for="inlineRadio3">Adviseer mij</label>
+          </div>
+          <div class="break"></div>
+          <p>Keuze printmateriaal</p>
+          <select class="form-select" aria-label="Default select example">
+            <option value="1">PLA</option>
+            <option value="2">PETG</option>
+            <option value="3">ABS </option>
+          </select>
+          <div class="break"></div>
+          <div class="mb-3">
+            <label for="formFileMultiple" class="form-label">Tekeningen uploaden</label>
+            <input class="form-control" type="file" id="formFileMultiple" multiple>
+          </div>
+          <div class="form-floating">
+            <textarea class="form-control textsize" rows="10" style="height:100%" placeholder="Opmerkingen of toelichting" id="floatingTextarea"></textarea>
+            <label for="floatingTextarea">Opmerkingen of toelichting</label>
+          </div>
+        <div class="col-md-12 center">
+          <button type="submit" class="btn btn-md btn-dark" id="buttontext">Versturen</button>
+        </div>
+      </form>
+   
+    </div>
+</body>
+</html>
