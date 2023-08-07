@@ -1,6 +1,8 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background-color:rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
@@ -19,16 +21,10 @@ margin-bottom: 50px;
 }
 
 nav{
-    margin-bottom: 50px;
+    margin-top: 0;
+    padding-top: 0;
 }
 
-.navbar-custom {
-    background-color: #395B64;
-}
-
-.nav-text-color{
-    color: #E7F6F2;
-}
 
 #formulier {
     width: 75%;
@@ -60,15 +56,6 @@ img{
     height: auto;
 }
 
-.btn {
-    background-color: #395B64;
-    color: white;
-}
-
-.btn:hover {
-    background-color: #A5C9CA;
-    color: black;
-}
 
 .contact-wrapper {
     align-items: center;
@@ -76,7 +63,7 @@ img{
 }
 
 footer {
-    background-color:#395B64;
+    background-color:black;
     text-align: center;
     color: white;
 }
@@ -99,8 +86,6 @@ footer {
 /* Padding below the footer and lighter body text */
 
 body {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
     color: rgb(var(--bs-tertiary-color-rgb));
   }
   
