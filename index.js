@@ -1,6 +1,40 @@
 const express = require('express')
 const app = express()
-const port = 80
+const port = 3000
+
+app.use(express.urlencoded({ extended: true }));
+
+app.post('/offerte', (req, res) => {
+  const formDataOfferte = {
+    voornaam: req.body.fname,
+    achternaam: req.body.lname,
+    email: req.body.email,
+    streetname: req.body.streetname,
+    postcode: req.body.zipcode,
+    stad: req.body.city,
+    printtechniek: req.body.printtechniek,
+    materiaal: req.body.materiaal,
+    opmerkingen: req.body.opmerkingen,
+    bestand: req.body.bestand
+  }
+console.log(formDataOfferte);
+});
+
+
+app.post('/contact', (req, res) => {
+  const formDataContact = {
+    naam: req.body.fname,
+    email: req.body.email,
+    streetname: req.body.streetname,
+    postcode: req.body.zipcode,
+    stad: req.body.city,
+    opmerkingen: req.body.opmerkingen,
+
+  }
+  console.log(formDataContact);
+});
+
+
 
 
 app.use(express.static(__dirname + '/public'));

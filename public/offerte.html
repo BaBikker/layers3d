@@ -4,7 +4,7 @@
         <head>
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <title></title>
+            <title>Layers3D</title>
             <meta name="description" content="">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <link rel="stylesheet" href="styles.css">
@@ -34,19 +34,19 @@
               </div>
             </nav>
       </nav>
-    <div class="welkomtekst">
+    <div class="welkomtekst" id="welkomtekst">
       <h1 id="welcome-heading">Offerte aanvragen</h1>
       <p id="welcome-text">Vraag hier een geheel vrijblijvende een offerte aan of neem contact met ons op voor meer informatie.</p>
       <p>Houd rekening met een minimale ordergrootte van €29,95 exclusief BTW.</p>
     </div>
     <div class="container" id="formulier">
-      <form class="row g-3" action="/" method="post">
+      <form class="row g-3" action="/offerte" method="post">
         <div class="col-md-6">
-          <label for="fname" id="inputfname">Voornaam:</label>
+          <label for="fname" id="fname">Voornaam:</label>
           <input type="text" class="form-control" id="fname" name="fname" required>
         </div>
         <div class="col-md-6">
-          <label for="lname" id="inputlname">Achternaam:</label>
+          <label for="lname" id="lname">Achternaam:</label>
           <input type="text" class="form-control" id="lname" name="lname" required>
         </div>
         <div class="col-md-6">
@@ -65,34 +65,31 @@
           <label for="city" id="inputcityname" class="form-label">Plaatsnaam:</label>
           <input type="text" class="form-control" id="city" name="city" required>
         </div>
-        <div class="break"></div>
+        <p class="hoofd">Gewenste printtechniek</p>
         <div class="form-check form-check-inline">
-            <p>Gewenste printtechniek</p>
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-            <label class="form-check-label" for="inlineRadio1">FDM (standaard)</label>
+            <input class="form-check-input" type="radio" name="printtechniek"  id="printtechniek" value="FDM">
+            <label class="form-check-label" type="radio" name="printtechniek" for="inlineRadio1">FDM (standaard)</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-            <label class="form-check-label" for="inlineRadio2">SLA (HD voor kleine objecten)</label>
+            <input class="form-check-input" type="radio" name="printtechniek"  id="printtechniek"  value="SLA">
+            <label class="form-check-label" type="radio" name="printtechniek" for="inlineRadio2">SLA (HD voor kleine objecten)</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-            <label class="form-check-label" for="inlineRadio3">Adviseer mij</label>
+            <input class="form-check-input" type="radio" name="printtechniek"  id="printtechniek"  value="adviseer mij">
+            <label class="form-check-label" type="radio" name="printtechniek" for="inlineRadio3">Adviseer mij</label>
           </div>
-          <div class="break"></div>
-          <p>Keuze printmateriaal</p>
-          <select class="form-select" aria-label="Default select example">
-            <option value="1">PLA</option>
-            <option value="2">PETG</option>
-            <option value="3">ABS </option>
+          <p class="hoofd">Keuze printmateriaal</p>
+          <select class="form-select" name="materiaal" id="materiaal" aria-label="Default select example">
+            <option name="materiaal" id="materiaal" value="PLA">PLA</option>
+            <option name="materiaal" id="materiaal" value="PETG">PETG</option>
+            <option name="materiaal" id="materiaal" value="ABS">ABS </option>
           </select>
-          <div class="break"></div>
           <div class="mb-3">
-            <label for="formFileMultiple" class="form-label">Tekeningen uploaden</label>
-            <input class="form-control" type="file" id="formFileMultiple" multiple>
+            <label for="formFileMultiple" name="bestand" id="bestand" class="form-label hoofd">Tekeningen uploaden</label>
+            <input class="form-control" name="bestand" id="bestand" type="file" id="formFileMultiple" multiple>
           </div>
           <div class="form-floating">
-            <textarea class="form-control textsize" rows="10" style="height:100%" placeholder="Opmerkingen of toelichting" id="floatingTextarea"></textarea>
+            <textarea class="form-control textsize" rows="10" style="height:100%" placeholder="Opmerkingen of toelichting" name="opmerkingen" id="opmerkingen"></textarea>
             <label for="floatingTextarea">Opmerkingen of toelichting</label>
           </div>
         <div class="col-md-12 center">

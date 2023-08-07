@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Layers3D</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="styles.css">
@@ -37,38 +37,38 @@
                 <div class="col-md-6">
                 <img src="https://solid3d.nl/wp-content/uploads/2022/05/shutterstock_1423189100-2048x1365.jpg" alt="3dprinting">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6" id="welkomtekst">
           <h1>Neem contact met ons op</h1>
-          <p>Bij Solid3D staan we klaar om u te helpen met al uw 3D printbehoeften.</p>
+          <p>Bij Layers3D staan we klaar om u te helpen met al uw 3D printbehoeften.</p>
           <p>Als u vragen heeft of een offerte voor 3D printoplossingen wilt aanvragen, aarzel dan niet om contact met ons op te nemen. Ons team staat klaar om u te helpen en ernaar uit om met u samen te werken.</p>
           <p>U kunt ons bereiken via het onderstaande contactformulier of via de contactgegevens die hieronder staan vermeld. We streven ernaar om dezelfde dag nog te reageren op verzoeken en vragen.</p>
         </div>
         </div>
         </div>
           <div class="container-fluid contact-wrapper">
-          <form class="row g-3">
+          <form action="/contact" method="post"  class="row g-3">
             <div class="col-md-6">
-              <label for="inputEmail4" class="form-label">Naam</label>
-              <input type="email" class="form-control" id="inputEmail4">
+              <label for="inputname" name="fname" id="fname" class="form-label">Naam</label>
+              <input  name="fname" id="fname" class="form-control">
             </div>
             <div class="col-md-6">
-              <label for="inputPassword4" class="form-label">Email</label>
-              <input type="password" class="form-control" id="inputPassword4">
+              <label for="inputemail"  name="email" id="email" class="form-label">Email</label>
+              <input  name="email" id="email" class="form-control">
             </div>
             <div class="col-12">
-              <label for="inputAddress" class="form-label">Address</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+              <label for="inputAddress" name="streetname" id="streetname" class="form-label">Address</label>
+              <input type="text" name="streetname" id="streetname" class="form-control" id="inputAddress" placeholder="1234 Main St">
             </div>
             <div class="col-md-6">
-              <label for="inputCity" class="form-label">Woonplaats</label>
-              <input type="text" class="form-control" id="inputCity">
+              <label for="inputCity" name="city" id="city" class="form-label">Woonplaats</label>
+              <input type="text" class="form-control" id="city" name="city">
             </div>
             <div class="col-md-2">
-              <label for="inputZip" class="form-label">Postcode</label>
-              <input type="text" class="form-control" id="inputZip">
+              <label for="inputZip" name="zipcode" id="zipcode" class="form-label">Postcode</label>
+              <input type="text"name="zipcode" id="zipcode" class="form-control" id="inputZip">
             </div>
             <div class="form-floating">
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                <textarea class="form-control" name="opmerkingen" id="opmerkingen" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
                 <label for="floatingTextarea2">Opmerkingen/ vragen</label>
               </div>
             <div class="col-12">
@@ -76,4 +76,9 @@
             </div>
           </form>
         </div>
+        <footer>
+
+
+          
+        </footer>
     </body>
