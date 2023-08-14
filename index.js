@@ -68,7 +68,7 @@ async function offerteEmail(formDataOfferte, uploadedFile) {
   try {
     const emailGegevens = await transporter.sendMail({
       from: 'bartbikker@live.nl',
-      to: 'bartbikker@live.nl',
+      to: 'bartbikker@live.nl, bikker44@gmail.com',
       subject: 'Offerte Aanvraag',
       text: 'Nieuwe offerte aanvraag via de website gegevens:\n\n' +
         'Voornaam: ' + formDataOfferte.voornaam + '\n' +
@@ -112,7 +112,7 @@ app.post('/contact', (req, res) => {
 
     const emailGegevens = await transporter.sendMail({
       from: 'bartbikker@live.nl',
-      to: "bartbikker@live.nl", 
+      to: "bartbikker@live.nl, bikker44@gmail.com", 
       subject: "Contactformulier ingevuld", 
       text:"Contactformulier ingevuld, reageren" + "\n\n" +
            "Voornaam: " + formDataContact.naam + "\n" +
