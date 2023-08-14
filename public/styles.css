@@ -29,6 +29,7 @@ nav{
 
 .marketing {
 align-items: center;
+margin-top: 25px;
 }
 
 .hoofd {
@@ -49,6 +50,7 @@ align-items: center;
     justify-content: center;
     width: 80%;
     margin: auto;
+    margin-top: 20px;
 }
 
 

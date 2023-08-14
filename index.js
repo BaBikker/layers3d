@@ -1,9 +1,26 @@
-const express = require('express')
-const app = express()
-const port = 80
+const express = require('express');
+const app = express();
+const port = 3000;
 const nodemailer = require("nodemailer");
+const multer = require('multer');
+const path = require('path');
+const fs = require('fs'); 
+
+
 
 app.use(express.urlencoded({ extended: true }));
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploads/'); 
+  },
+  filename: (req, file, cb) => {
+    const uniqueFileName = Date.now() + '-' + path.extname(file.originalname);
+    cb(null, uniqueFileName); 
+  },
+});
+
+const upload = multer({ storage: storage })
 
 
 const transporter = nodemailer.createTransport({
@@ -14,49 +31,71 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-app.post('/offerte', (req, res) => {
-  var formDataOfferte = {
-    voornaam: req.body.fname,
-    achternaam: req.body.lname,
-    email: req.body.email,
-    straatnaam: req.body.streetname,
-    postcode: req.body.zipcode,
-    stad: req.body.city,
-    printtechniek: req.body.printtechniek,
-    materiaal: req.body.materiaal,
-    opmerkingen: req.body.opmerkingen,
-    bestand: req.body.bestand
+app.post('/offerte', upload.single('bestand'), async (req, res) => {
+  try {
+    const uploadedFile = req.file;
+
+    console.log('Uploaded File:', uploadedFile);
+
+    const formDataOfferte = {
+      voornaam: req.body.fname,
+      achternaam: req.body.lname,
+      email: req.body.email,
+      straatnaam: req.body.streetname,
+      postcode: req.body.zipcode,
+      stad: req.body.city,
+      printtechniek: req.body.printtechniek,
+      materiaal: req.body.materiaal,
+      opmerkingen: req.body.opmerkingen,
+      bestand: uploadedFile ? uploadedFile.buffer : null,
+    };
+
+    console.log(formDataOfferte);
+
+    if (uploadedFile) {
+      await offerteEmail(formDataOfferte, uploadedFile); // Send email
+    }
+
+    res.redirect('/success');
+  } catch (error) {
+    console.error('Error processing form data:', error);
+    res.status(500).send('Error processing form data.');
   }
+});
 
-  async function offerteEmail() {
 
+async function offerteEmail(formDataOfferte, uploadedFile) {
+  try {
     const emailGegevens = await transporter.sendMail({
       from: 'bartbikker@live.nl',
-      to: "bartbikker@live.nl", 
-      subject: "Offerte Aanvraag", 
-      text:"Nieuwe offerte aanvraag via de website gegevens:" + "\n\n" +
-           "Voornaam: " + formDataOfferte.voornaam + "\n" +
-           "Achternaam: " + formDataOfferte.achternaam + "\n" +
-           "Email: " + formDataOfferte.email + "\n" +
-           "Straatnaam: " + formDataOfferte.straatnaam + "\n" +
-           "Postcode: " + formDataOfferte.postcode + "\n" +
-           "Stad: " + formDataOfferte.stad + "\n" +
-           "Printtechniek: " + formDataOfferte.printtechniek + "\n" +
-           "Materiaal: " + formDataOfferte.materiaal + "\n" +
-           "Opmerkingen: " + req.body.opmerkingen + "\n" +
-           "Binnen 48 uur reageren",
+      to: 'bartbikker@live.nl',
+      subject: 'Offerte Aanvraag',
+      text: 'Nieuwe offerte aanvraag via de website gegevens:\n\n' +
+        'Voornaam: ' + formDataOfferte.voornaam + '\n' +
+        'Achternaam: ' + formDataOfferte.achternaam + '\n' +
+        'Email: ' + formDataOfferte.email + '\n' +
+        'Straatnaam: ' + formDataOfferte.straatnaam + '\n' +
+        'Postcode: ' + formDataOfferte.postcode + '\n' +
+        'Stad: ' + formDataOfferte.stad + '\n' +
+        'Printtechniek: ' + formDataOfferte.kleur + '\n' +
+        'Materiaal: ' + formDataOfferte.materiaal + '\n' +
+        'Opmerkingen: ' + formDataOfferte.opmerkingen + '\n' +
+        'Binnen 48 uur reageren',
       attachments: [
         {
-          filename:req.body.bestand ,
-          content: req.body.bestand
-        }
-      ]     
+          filename: uploadedFile.originalname,
+          content: fs.createReadStream(uploadedFile.path), 
+          contentType: uploadedFile.mimetype, 
+        },
+      ],
     });
-    console.log("Message sent: %s", emailGegevens.messageId);
+
+    console.log('Message sent: %s', emailGegevens.messageId);
+  } catch (error) {
+    console.error('Error sending email:', error);
+    throw error;
   }
-console.log(formDataOfferte);
-offerteEmail();
-});
+}
 
 
 app.post('/contact', (req, res) => {
@@ -94,10 +133,8 @@ app.post('/contact', (req, res) => {
   }
 console.log(formDataContact);
 contactEmail();
+res.redirect('/success');
 });
-
-
-
 
 app.use(express.static(__dirname + '/public'));
 
@@ -120,6 +157,12 @@ app.get('/offerte', (req, res) => {
 app.get('/prijzen', (req, res) => {
   res.sendFile(__dirname + "/public/prijzen.html")
 })
+
+app.get('/success', (req, res) => {
+  res.sendFile(__dirname + "/public/success.html")
+})
+
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

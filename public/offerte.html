@@ -40,7 +40,7 @@
       <p>Houd rekening met een minimale ordergrootte van €29,95 exclusief BTW.</p>
     </div>
     <div class="container" id="formulier">
-      <form class="row g-3" action="/offerte" method="post">
+      <form class="row g-3" action="/offerte" method="post" enctype="multipart/form-data">
         <div class="col-md-6">
           <label for="fname" id="fname">Voornaam:</label>
           <input type="text" class="form-control" id="fname" name="fname" required>
@@ -65,18 +65,18 @@
           <label for="city" id="inputcityname" class="form-label">Plaatsnaam:</label>
           <input type="text" class="form-control" id="city" name="city" required>
         </div>
-        <p class="hoofd">Gewenste printtechniek</p>
+        <p class="hoofd">Gewenste kleur</p>
         <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="printtechniek"  id="printtechniek" value="FDM">
-            <label class="form-check-label" type="radio" name="printtechniek" for="inlineRadio1">FDM (standaard)</label>
+            <input class="form-check-input" type="radio" name="printtechniek"  id="kleur" value="FDM">
+            <label class="form-check-label" type="radio" name="printtechniek" for="inlineRadio1">Oranje</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="printtechniek"  id="printtechniek"  value="SLA">
-            <label class="form-check-label" type="radio" name="printtechniek" for="inlineRadio2">SLA (HD voor kleine objecten)</label>
+            <input class="form-check-input" type="radio" name="printtechniek"  id="kleur"  value="SLA">
+            <label class="form-check-label" type="radio" name="printtechniek" for="inlineRadio2">Wit</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="printtechniek"  id="printtechniek"  value="adviseer mij">
-            <label class="form-check-label" type="radio" name="printtechniek" for="inlineRadio3">Adviseer mij</label>
+            <input class="form-check-input" type="radio" name="printtechniek"  id="kleur"  value="adviseer mij">
+            <label class="form-check-label" type="radio" name="printtechniek" for="inlineRadio3">Zwart</label>
           </div>
           <p class="hoofd">Keuze printmateriaal</p>
           <select class="form-select" name="materiaal" id="materiaal" aria-label="Default select example">
@@ -86,7 +86,7 @@
           </select>
           <div class="mb-3">
             <label for="formFileMultiple" name="bestand" id="bestand" class="form-label hoofd">Tekeningen uploaden</label>
-            <input class="form-control" name="bestand" id="bestand" type="file" id="formFile">
+            <input class="form-control" name="bestand" id="bestand" type="file">
           </div>
           <div class="form-floating">
             <textarea class="form-control textsize" rows="10" style="height:100%" placeholder="Opmerkingen of toelichting" name="opmerkingen" id="opmerkingen"></textarea>
