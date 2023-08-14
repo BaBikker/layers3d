@@ -22,6 +22,10 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage })
 
+var mailList = [  
+  'bartbikker@live.nl',
+  'bikker44@gmail.com',
+  ]
 
 const transporter = nodemailer.createTransport({
   host: "smtp-mail.outlook.com",
@@ -63,10 +67,7 @@ app.post('/offerte', upload.single('bestand'), async (req, res) => {
   }
 });
 
-var mailList = [  
-'bartbikker@live.nl',
-'bikker44@gmail.com',
-]
+
 
 async function offerteEmail(formDataOfferte, uploadedFile) {
   try {
@@ -125,13 +126,7 @@ app.post('/contact', (req, res) => {
            "Postcode: " + formDataContact.postcode + "\n" +
            "Stad: " + formDataContact.stad + "\n" +
            "Opmerkingen: " + formDataContact.opmerkingen + "\n" +
-           "Binnen 48 uur reageren",
-      attachments: [
-        {
-          filename:req.body.bestand ,
-          content: req.body.bestand
-        }
-      ]     
+           "Binnen 48 uur reageren",   
     });
     console.log("Message sent: %s", emailGegevens.messageId);
   }
