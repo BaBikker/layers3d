@@ -5,13 +5,11 @@ body {
     padding: 0;
 }
 
+
+
 #welkomtekst {
 text-align: center;
 margin-top: 25px;
-}
-
-.center{
-  margin: auto;
 }
 
 .contact-wrapper {
@@ -80,10 +78,6 @@ footer {
 
 .dik{
     font-weight: bold;
-}
-
-svg {
-  margin-bottom: 15px;
 }
 
 
