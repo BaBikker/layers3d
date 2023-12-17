@@ -5,6 +5,9 @@ body {
     padding: 0;
 }
 
+svg {
+  margin-bottom: 30px;
+}
 .texta {
   color: blue;
 }
@@ -106,7 +109,7 @@ footer {
 }
 
 .dik{
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 
@@ -145,12 +148,12 @@ body {
   -------------------------------------------------- */
   
   /* Center align the text within the three columns below the carousel */
-  .marketing .col-lg-3 {
+  .marketing .col-lg-4 {
     margin-bottom: 1.5rem;
     text-align: center;
   }
   /* rtl:begin:ignore */
-  .marketing .col-lg-3 p {
+  .marketing .col-lg-4 p {
     margin-right: .75rem;
     margin-left: .75rem;
   }
