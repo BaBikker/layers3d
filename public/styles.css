@@ -12,6 +12,10 @@ svg {
   color: blue;
 }
 
+.imgcenter {
+  margin-top: 200px;
+}
+
 .centerbanner {
   position: absolute;
   top: 35%;
