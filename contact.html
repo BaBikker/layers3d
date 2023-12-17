@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Weprint3D contactpagina</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <body> 
+      <nav class="navbar navbar-expand-lg bg-dark sticky-top" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a href="/"><img class="navbar-brand nav-text-color logonav " href="/" src="/images/weprint3d.png"></img></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link nav-text-color " href="3dprintservice">3D-Printservice</a>
+              <a class="nav-link nav-text-color " href="offerte">Offerte</a>
+              <a class="nav-link nav-text-color " href="prijzen">Prijzen</a>
+             <a class="nav-link nav-text-color " href="contact">Contact</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+        <div class="container-fluid wrapper">
+            <div class="row top">
+                <div class="col-md-6">
+                <img src="https://solid3d.nl/wp-content/uploads/2022/05/shutterstock_1423189100-2048x1365.jpg" alt="3dprinting">
+            </div>
+            <div class="col-md-6" id="welkomtekst">
+          <h1>Neem contact met ons op</h1>
+          <p>Bij Weprint3D staan wij altijd klaar om u te helpen met 3D printbehoeften.</p>
+          <p>Als u vragen heeft of een prijsopgaaf voor een 3D print wilt aanvraagen twijfel dan niet en neem contact met ons op. Wij staan altijd klaar om u te helpen en eventueel samen te werken aan een oplossing!</p>
+          <p>U kunt ons bereiken door onderstaand contactformulier in te vullen, u kunt natuurlijk ook altijd even bellen. Wij streven erna om dezelfde dag nog te reageren op verzoeken.</p>
+        </div>
+        </div>
+        </div>
+          <div class="container-fluid container contact-wrapper" id="formulier">
+          <form action="/contact" method="post"  class="row g-3">
+            <div class="col-md-6">
+              <label for="inputname" name="fname" id="fname" class="form-label">Naam</label>
+              <input  name="fname" id="fname" class="form-control">
+            </div>
+            <div class="col-md-6">
+              <label for="inputemail"  name="email" id="email" class="form-label">Email</label>
+              <input  name="email" id="email" class="form-control">
+            </div>
+            <div class="col-12">
+              <label for="inputAddress" name="streetname" id="streetname" class="form-label">Address</label>
+              <input type="text" name="streetname" id="streetname" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            </div>
+            <div class="col-md-6">
+              <label for="inputCity" name="city" id="city" class="form-label">Woonplaats</label>
+              <input type="text" class="form-control" id="city" name="city">
+            </div>
+            <div class="col-md-2">
+              <label for="inputZip" name="zipcode" id="zipcode" class="form-label">Postcode</label>
+              <input type="text"name="zipcode" id="zipcode" class="form-control" id="inputZip">
+            </div>
+            <div class="form-floating">
+                <textarea class="form-control" name="opmerkingen" id="opmerkingen" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                <label for="floatingTextarea2">Opmerkingen/ vragen</label>
+              </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-dark">Verzenden</button>
+            </div>
+          </form>
+        </div>
+        <footer>
+          <div>
+            <p class="foot"><a class="foot" href="">Layers3D</a></p>
+            <p class="foot"><a class="foot" class="foot" href="">Vaartweg 167a</a></p>
+            <p class="foot"><a class="foot" href="">Hilversum</a></p>
+            <p class="foot"><a class="foot" href="tel:+31683570061">+31683570061</a></p>
+          </div>
+        </footer>
+    </body>
