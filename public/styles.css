@@ -16,6 +16,10 @@ svg {
   margin-top: 200px;
 }
 
+.nav-link {
+  font-size: 1.2em;
+}
+
 .centerbanner {
   position: absolute;
   top: 35%;
