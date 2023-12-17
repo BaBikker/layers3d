@@ -5,6 +5,28 @@ body {
     padding: 0;
 }
 
+.texta {
+  color: blue;
+}
+
+.centerbanner {
+  position: absolute;
+  top: 35%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  max-width: 40%;
+  height: auto;
+}
+
+.bannerHome {
+  width: 100%;
+  height: 450px;
+  margin-bottom: 70px;
+}
+
 a {
   text-decoration: none;
   color: black;
