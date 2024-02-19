@@ -40,6 +40,7 @@ app.post('/offerte', upload.single('bestand'), async (req, res) => {
     const formDataOfferte = {
       voornaam: req.body.fname,
       achternaam: req.body.lname,
+      bedrijfsnaam: req.body.bedrijfsnaam,
       email: req.body.email,
       straatnaam: req.body.streetname,
       postcode: req.body.zipcode,
@@ -73,11 +74,11 @@ async function offerteEmail(formDataOfferte, uploadedFile) {
       text: 'Nieuwe offerte aanvraag via de website gegevens:\n\n' +
         'Voornaam: ' + formDataOfferte.voornaam + '\n' +
         'Achternaam: ' + formDataOfferte.achternaam + '\n' +
+        'Bedrijfsnaam: ' + formDataOfferte.bedrijfsnaam + '\n' +
         'Email: ' + formDataOfferte.email + '\n' +
         'Straatnaam: ' + formDataOfferte.straatnaam + '\n' +
         'Postcode: ' + formDataOfferte.postcode + '\n' +
         'Stad: ' + formDataOfferte.stad + '\n' +
-        'Printtechniek: ' + formDataOfferte.kleur + '\n' +
         'Materiaal: ' + formDataOfferte.materiaal + '\n' +
         'Opmerkingen: ' + formDataOfferte.opmerkingen + '\n' +
         'Binnen 48 uur reageren',
@@ -101,6 +102,7 @@ async function offerteEmail(formDataOfferte, uploadedFile) {
 app.post('/contact', (req, res) => {
   const formDataContact = {
     naam: req.body.fname,
+    bedrijfsnaam: req.body.bedrijfsnaam,
     email: req.body.email,
     streetname: req.body.streetname,
     postcode: req.body.zipcode,
@@ -116,6 +118,7 @@ app.post('/contact', (req, res) => {
       subject: "Contactformulier ingevuld", 
       text:"Contactformulier ingevuld, reageren" + "\n\n" +
            "Voornaam: " + formDataContact.naam + "\n" +
+           'Bedrijfsnaam: ' + formDataContact.bedrijfsnaam + '\n' +
            "Email: " + formDataContact.email + "\n" +
            "Straatnaam: " + formDataContact.streetname + "\n" +
            "Postcode: " + formDataContact.postcode + "\n" +
